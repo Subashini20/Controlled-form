@@ -24,7 +24,7 @@ class Cform extends Component{
         e.preventDefault();
        
         var errKeys = await Object.keys(this.state).filter((key) => {
-          if (this.state[key] == '' && this.state[key] != this.state.errors[key]) {
+          if (this.state[key] == '' && this.state[key] != 'errors') {
             return key;
           }
         });
@@ -117,11 +117,11 @@ class Cform extends Component{
                 <br/>
                 <div>
                    <label>Points</label> <br/><br/>
-                   <label><input type="radio" name="points" /> 1</label>&nbsp;&nbsp;
-                   <label><input type="radio" name="points" /> 2</label>&nbsp;&nbsp;
-                   <label><input type="radio" name="points" /> 3</label>&nbsp;&nbsp;
-                   <label><input type="radio" name="points" /> 4</label>&nbsp;&nbsp;
-                   <label><input type="radio" name="points" /> 5</label>
+                   <label><input type="radio" name="points" onChange={this.handlechange}/> 1</label>&nbsp;&nbsp;
+                   <label><input type="radio" name="points" onChange={this.handlechange}/> 2</label>&nbsp;&nbsp;
+                   <label><input type="radio" name="points" onChange={this.handlechange}/> 3</label>&nbsp;&nbsp;
+                   <label><input type="radio" name="points" onChange={this.handlechange}/> 4</label>&nbsp;&nbsp;
+                   <label><input type="radio" name="points" onChange={this.handlechange}/> 5</label>
 
                    <br/>
                 <span style={{ color: 'red' }}>{' '}{this.state.errors.points}{' '}</span>
